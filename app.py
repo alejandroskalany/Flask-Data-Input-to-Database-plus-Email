@@ -26,7 +26,7 @@ def success():
     if request.method=='POST':
         email=request.form["email_name"]
         height=request.form["height_name"]
-    if db.session.query(Data).filter(Data.email_==email).count() ==0:
+        if db.session.query(Data).filter(Data.email_==email).count() ==0:
             data=Data(email,height)
             db.session.add(data)
             db.session.commit()
